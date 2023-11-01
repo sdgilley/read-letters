@@ -7,11 +7,13 @@ There are two major steps to this project:
 1. Extract the text from scanned images
 1. Create a document with image / text next to each other
 
-## Extracting text from images
+## Extract text from images
 
 First, run `read-letters.py` to read the text from the images. This creates a .txt file for each image file in the given directory.
 
-## Creating a document
+You may want to then read the .txt files and fix any errors. For my parent's letters, it gets around 60% right, so it still needs some manual editing.
+
+## Create a document
 
 Once you have extracted text, run `create-doc.py` to create a document with the images and text next to each other. This script creates both a .docx and .pdf file with the images and text.
 

@@ -7,6 +7,32 @@ There are two major steps to this project:
 1. Extract the text from scanned images
 1. Create a document with image / text next to each other
 
+## Prerequisites
+
+* Create a [Computer Vision resource](https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision) in the Azure portal to get your key and endpoint. After it deploys, click **Go to resource**.
+
+    * You will need the key and endpoint from the resource you create to connect your application to the Computer Vision service. Add your key and endpoint as environment variables as shown below.
+    * You can use the free pricing tier (`F0`) to try the service, and upgrade later to a paid tier for production. 
+
+* Create the following environment variables to be accessed when you run the Python script:
+    * `COMPUTER_VISION_ENDPOINT` - the endpoint you created from the OCR Quickstart
+    * `COMPUTER_VISION_SUBSCRIPTION_KEY` - the key you created from the OCR Quickstart
+
+* Install the following libraries for `read-letters.py`:
+
+    ```console
+    pip install --upgrade azure-cognitiveservices-vision-computervision
+    pip install pillow
+    pip install PyGithub  
+    ```
+
+* Install the following libraries for `create-doc.py`:
+
+    ```console
+    pip install python-docx
+    pip install docx2pdf
+    ```
+
 ## Extract text from images
 
 First, run `read-letters.py` to read the text from the images. This creates a .txt file for each image file in the given directory.

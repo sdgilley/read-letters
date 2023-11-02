@@ -8,8 +8,8 @@ Manually edit the text files if necessary.
 Text and image files should be in the same folder.
 This script assumes the following structure for the image names:
 
-mm-dd-yy-who-p-where.jpg (or png)
-i.e.:    01-11-54-dad-1-richmond.jpg
+yy-mm-dd-who-p-where.jpg (or png)
+i.e.:    54-01-11-dad-1-richmond.jpg
 
 Install these packages before running this script:
       pip install python-docx
@@ -18,7 +18,7 @@ Install these packages before running this script:
 
 ##### USER INPUT #####
 # path to the folder with image a text files.
-img_path = "C:\\Git\\read-letters-data\\letters" 
+img_path = "C:\\Git\\read-letters\\letters\\" 
 title = "Letters from Mom & Dad"
 century = "19" # century of the letter
 docname = "letters.docx" #name of the output document
@@ -50,9 +50,10 @@ for path,dirs,files in os.walk(img_path):
             parts = file.split('.')[0].split('-')
 
             # split apart name to get the date, who, where, and page number.
-            date = '/'.join(parts[:2])
-            year = f"{century}{parts[2]}" # add century to year
-            date = f"{date}/{year}"
+            yr = parts[0]
+            mo = parts[1]
+            da = parts[2]
+            date = f"{mo}/{da}/{century}{yr}"
             who = parts[3].capitalize()  
             p = parts[4]
             where = parts[5].capitalize() 

@@ -17,7 +17,7 @@ References:
 '''
 
 ##### USER INPUT #####
-img_path = "C:\\Git\\read-letters-data\\new"
+img_path = "C:\\Git\\read-letters\\new"
 ######################
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient

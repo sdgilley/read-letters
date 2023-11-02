@@ -92,4 +92,4 @@ pdfname = docname.split('.')[0] + ".pdf"
 convert(docname, pdfname)
 
 print("\n**********************************************************")
-print(f"Created {docname} & {pdfname} with {pnum} letters pages.")
+print(f"Created {docname} & {pdfname} with {pnum} letter pages.")
